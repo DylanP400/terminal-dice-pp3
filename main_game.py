@@ -6,7 +6,7 @@ def introduction():
     print("You can practice your skills before you hit the casino?")
     print("If so you have came to the right place")
     player_name()
-    response = input("Do you know how to play? (yes/no)")
+    response = input("Do you know how to play? (yes/no)\n")
     if response == "yes":
         print("Get ready your Game is comming right up.....")
     elif response == "no":
@@ -29,7 +29,7 @@ def how_to_play():
     print("that number becomes the 'point'.")
     print("The player then continues to roll the dice until they")
     print("either roll the'point'again and win, or they roll a 7 and lose.")
-    response = input("\nDo you want to start the game? (yes/no)")
+    response = input("\nDo you want to start the game? (yes/no)\n")
     if response == "yes":
         print("Best of luck your Game is comming right up.....")
     elif response == "no":
@@ -46,7 +46,7 @@ def player_name():
     """
     print("------------------")
     name = input("What is your name?\n------------------\n")
-    print(f"\nwelcome to the game {name}\n")
+    print(f"\nWelcome to the game {name}\n")
 
 
 introduction()
