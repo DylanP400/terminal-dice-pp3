@@ -10,7 +10,7 @@ def introduction():
     if response == "yes":
         print("Get ready your Game is comming right up.....")
     elif response == "no":
-        print("\nLoading instructions\n")
+        print("\nLoading instructions....\n")
         how_to_play()
     else:
         print("\nPlease enter yes or no\nTry again\n")
@@ -28,13 +28,13 @@ def how_to_play():
     print("If the total is any other number (4, 5, 6, 8, 9, or 10),")
     print("that number becomes the 'point'.")
     print("The player then continues to roll the dice until they")
-    print("either roll the'point'again and win, or they roll a 7 and lose.")
+    print("either roll the'point' again and win, or they roll a 7 and lose.")
     response = input("\nDo you want to start the game? (yes/no)\n")
     if response == "yes":
         print("Best of luck your Game is comming right up.....")
     elif response == "no":
         print("You just want to watch the world burn...Restarting game\n")
-        introduction()
+        restart()
     else:
         print("\n You have to click yes or no\n")
         how_to_play()
@@ -48,5 +48,19 @@ def player_name():
     name = input("What is your name?\n------------------\n")
     print(f"\nWelcome to the game {name}\n")
 
+
+def restart():
+    """
+    For restarting the game
+    """
+    response = input("Do you know how to play? (yes/no)\n")
+    if response == "yes":
+        print("Get ready your Game is comming right up.....")
+    elif response == "no":
+        print("\nLoading instructions....\n")
+        how_to_play()
+    else:
+        print("\nPlease enter yes or no\nTry again\n")
+        introduction()
 
 introduction()
