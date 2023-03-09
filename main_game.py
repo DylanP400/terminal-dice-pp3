@@ -7,13 +7,19 @@ dice2 = random.randint(1, 6)
 
 
 def print_dice():
+    """
+    To print the Dice art to the terminal
+    """
     for i in range(5):
         print(DICE_ART[dice1][i], "    ", DICE_ART[dice2][i])
 
 
 def add_dice():
+    """
+    To add the values of the dice together
+    """
     total = dice1 + dice2
-    print(f"your total is {total}")
+    print(f"you rolled a {total}")
 
 
 def roll_dice():
@@ -35,13 +41,15 @@ def introduction():
     """
     Introduction asking if you need istructions or not
     """
+    print("============================================")
     print("\nHello and welcome to Dice in the Terminal\n")
     print("Do you want to practice your skills before you hit the casino?\n")
     print("If so you have came to the right place\n")
+    print("============================================\n")
     player_name()
     response = input("Do you know how to play? (yes/no)\n")
     if response == "yes":
-        print("Get ready your Game is comming right up.....\n")
+        print("Get ready your game is comming right up.....\n")
         roll_dice()
     elif response == "no":
         print("\nLoading instructions....\n")
@@ -49,7 +57,7 @@ def introduction():
     else:
         print("\nPlease enter 'yes' or 'no'\nTry again\n")
         introduction()
-
+    
 
 def how_to_play():
     """
@@ -66,7 +74,7 @@ def how_to_play():
     while True:  # Loop to ask the same question if there is a error
         response = input("\nDo you want to start the game? (yes/no)\n")
         if response == "yes":
-            print("Best of luck your Game is coming right up.....\n")
+            print("Best of luck your game is coming right up.....\n")
             roll_dice()
             break
         elif response == "no":
@@ -84,6 +92,22 @@ def player_name():
     print("------------------\n")
     name = input("What is your name?\n\n------------------\n\n")
     print(f"\nWelcome to the game {name}\n")
+    player_age()
+
+
+def player_age():
+    """
+    To check if the player is old enough to play
+    """
+    age = int(input("What age are you?\n"))
+    if age >= 21:
+        print("Welcome to the game!")
+    elif age < 21:
+        print("I am sorry but you are not old enough to play\n")
+        print("Error...Restarting Terminal Dice\n")
+        introduction()
+    else:
+        print("Please enter your age")
 
 
 def restart():
