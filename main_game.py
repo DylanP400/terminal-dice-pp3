@@ -5,9 +5,17 @@ import random
 def print_dice():
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
-    
+
     for i in range(5):
         print(DICE_ART[dice1][i], "    ", DICE_ART[dice2][i])
+
+
+def add_dice():
+    dice1 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    total = dice1 + dice2
+    print(f"your total is {total}")
+
 
 def roll_dice():
     """
@@ -18,6 +26,7 @@ def roll_dice():
         if response == "r":
             print("Dice Rolling....")
             print_dice()
+            add_dice()
             break
         else:
             print("You have to enter 'r' to roll your dice/nTry again!")
@@ -27,8 +36,7 @@ def introduction():
     """
     Introduction asking if you need istructions or not
     """
-    print()
-    print("Hello and welcome to Dice in the Terminal\n")
+    print("\nHello and welcome to Dice in the Terminal\n")
     print("Do you want to practice your skills before you hit the casino?\n")
     print("If so you have came to the right place\n")
     player_name()
@@ -75,7 +83,7 @@ def player_name():
     For setting the players name.
     """
     print("------------------\n")
-    name = input("What is your name?\n\n------------------\n")
+    name = input("What is your name?\n\n------------------\n\n")
     print(f"\nWelcome to the game {name}\n")
 
 
@@ -94,9 +102,10 @@ def restart():
         introduction()
 
 
-introduction()  
+introduction()
 
 
-"""
-I need to put the roll dice inside a funtion that asks you to roll the dice 
-"""
+# I need to add the sum of both the dice then plan next steps.
+# add art
+# maybe add color
+# over 21 feature?
