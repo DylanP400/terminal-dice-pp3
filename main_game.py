@@ -2,17 +2,16 @@ from dice_art import DICE_ART
 import random
 
 
-def print_dice():
-    dice1 = random.randint(1, 6)
-    dice2 = random.randint(1, 6)
+dice1 = random.randint(1, 6)
+dice2 = random.randint(1, 6)
 
+
+def print_dice():
     for i in range(5):
         print(DICE_ART[dice1][i], "    ", DICE_ART[dice2][i])
 
 
 def add_dice():
-    dice1 = random.randint(1, 6)
-    dice2 = random.randint(1, 6)
     total = dice1 + dice2
     print(f"your total is {total}")
 
@@ -94,6 +93,7 @@ def restart():
     response = input("Do you know how to play? 'yes' or 'no'\n")
     if response == "yes":
         print("Get ready your Game is comming right up.....\n")
+        roll_dice()
     elif response == "no":
         print("\nLoading instructions....\n")
         how_to_play()
@@ -105,7 +105,6 @@ def restart():
 introduction()
 
 
-# I need to add the sum of both the dice then plan next steps.
 # add art
 # maybe add color
 # over 21 feature?
