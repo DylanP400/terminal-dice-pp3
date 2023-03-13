@@ -51,7 +51,12 @@ def introduction():
     Introduction asking if you need instructions or not
     """
     print("============================================\n")
-    print("\nHello and welcome to Dice in the Terminal\n")
+    print("█░█ █▀▀ █░░ █░░ █▀█   ▄▀█ █▄░█ █▀▄")
+    print("█▀█ ██▄ █▄▄ █▄▄ █▄█   █▀█ █░▀█ █▄▀\n")
+    print("█░█░█ █▀▀ █░░ █▀▀ █▀█ █▀▄▀█ █▀▀   ▀█▀ █▀█")
+    print("▀▄▀▄▀ ██▄ █▄▄ █▄▄ █▄█ █░▀░█ ██▄   ░█░ █▄█\n")
+    print("▀█▀ █▀▀ █▀█ █▀▄▀█ █ █▄░█ ▄▀█ █░░   █▀▄ █ █▀▀ █▀▀")
+    print("░█░ ██▄ █▀▄ █░▀░█ █ █░▀█ █▀█ █▄▄   █▄▀ █ █▄▄ ██▄\n")
     print("Do you want to practice your skills before you hit the casino?\n")
     print("If so you have came to the right place\n")
     print("============================================\n")
