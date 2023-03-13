@@ -1,61 +1,51 @@
-from dice_art import DICE_ART
 import random
+from dice_art import DICE_ART
 
 
-dice1 = random.randint(1, 6)
-dice2 = random.randint(1, 6)
-total = dice1 + dice2
-
-
-def print_dice():
+def print_dice(first_dice, second_dice):
     """
     To print the Dice art to the terminal
     """
     for i in range(5):
-        print(DICE_ART[dice1][i], "    ", DICE_ART[dice2][i])
-
-
-def add_dice():
-    """
-    To add the values of the dice together
-    """
-    print(f"you rolled a {total}\n")
+        print(DICE_ART[first_dice][i], "    ", DICE_ART[second_dice][i])
 
 
 def roll_dice():
     """
     To ask the player if they want to roll the dice
     """
+    dice1 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    total = dice1 + dice2
+
     while True:
         response = input("Please use 'r' to roll your dice\n")
         if response == "r":
             print("Dice Rolling....\n")
-            print_dice()
-            add_dice()
-            game_logic()
+            print_dice(dice1, dice2)
+            print(f"you rolled a total of {total}\n")
+            game_logic(total)
             break
         else:
             print("You have to enter 'r' to roll your dice/nTry again\n!")
 
 
-def game_logic():
+def game_logic(total):
     """
     The Logic behind the game
     """
     if total == 7 or total == 11:
         print("You win!\n")
+        restart()
     elif total == 2 or total == 3 or total == 12:
-        print("You lose!\n")
+        print("You lost!\n")
+        restart()
     else:
-        point = total
-        print(f"You have hit the point! Your point is {total}.\n")
-    roll_dice()
-    if point == 4 or point == 5 or point == 6 or point == 8 or point == 9:
+        print(f"You have hit the Point\nYour point is {total}")
         roll_dice()
-    elif point == 7:
-        print("You lost!\nBetter luck next time\n")
 
 
+# change to instructions
 def introduction():
     """
     Introduction asking if you need instructions or not
@@ -87,9 +77,9 @@ def how_to_play():
     print("If the total is 7 or 11, the player wins.\n")
     print("If the total is 2, 3, or 12, the player loses.\n")
     print("If the total is any other number (4, 5, 6, 8, 9, or 10),\n")
-    print("that number becomes the 'point'.\n")
+    print("That number becomes the 'point'.\n")
     print("The player then continues to roll the dice until they\n")
-    print("either roll the'point' again and win, or they roll a 7 and lose.\n")
+    print("Either roll the'point' again and win, or they roll a 7 and lose.\n")
     while True:  # Loop to ask the same question if there is a error
         response = input("\nDo you want to start the game? (yes/no)\n")
         if response == "yes":
@@ -133,7 +123,7 @@ def restart():
     """
     For restarting the game
     """
-    response = input("Do you know how to play? 'yes' or 'no'\n")
+    response = input("Do you want to play again? 'yes' or 'no'\n")
     if response == "yes":
         print("Get ready your Game is comming right up.....\n")
         roll_dice()
@@ -151,6 +141,6 @@ def main_game():
 
 main_game()
 
-
+# make a welcome function that links to intructions
 # add art
 # maybe add color
