@@ -10,7 +10,7 @@ def print_dice(first_dice, second_dice):
     To print the Dice art to the terminal
     """
     for i in range(5):
-        print(DICE_ART[first_dice][i], "    ", DICE_ART[second_dice][i])
+        print(DICE_ART[first_dice][i], " ", DICE_ART[second_dice][i])
 
 
 def roll_dice():
@@ -20,7 +20,6 @@ def roll_dice():
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
     total = dice1 + dice2
-
     while True:
         response = input(Fore.CYAN + "Please use 'r' to roll your dice\n")
         if response == "r":
@@ -34,19 +33,76 @@ def roll_dice():
             print(Fore.YELLOW + "Try Again!\n")
 
 
+# def game_logic(total):
+#     """
+#     The Logic behind the game
+#     """
+#     if total == 7 or total == 11:
+#         print(Fore.GREEN + "You win!\n")
+#         restart()
+#     elif total == 2 or total == 3 or total == 12:
+#         print(Fore.RED + "You lost!\n")
+#         restart()
+#     else:
+#         print(f"{Fore.YELLOW}You have hit the Point\nYour point is {total}")
+#         roll_dice()
+#         if total == 7:
+
+
+player_roll = 0
+game_over = False
+
+
 def game_logic(total):
     """
     The Logic behind the game
     """
-    if total == 7 or total == 11:
-        print(Fore.GREEN + "You win!\n")
+    global player_roll
+    if total in (2, 3, 12):
+        print(Fore.RED + "player loses")
+        reset_game()
         restart()
-    elif total == 2 or total == 3 or total == 12:
-        print(Fore.RED + "You lost!\n")
+    elif total in (7, 11) and player_roll == 0:
+        print(Fore.GREEN + "player wins")
+        reset_game()
+        restart()
+    elif total in (2, 4, 5, 6, 8, 9, 10):
+        print(Fore.CYAN + "You have hit your point")
+        player_roll += 1
+        print(player_roll)
+        roll_dice()
+    elif total in (7, 11) and player_roll != 0:
+        print(Fore.RED + "player loses")
+        reset_game()
+        restart()
+    elif total in (2, 4, 5, 6, 8, 9, 10) and player_roll != 0:
+        print("You hit your point again and Won!")
+        player_roll += 1
+        reset_game()
         restart()
     else:
-        print(f"{Fore.YELLOW}You have hit the Point\nYour point is {total}")
-        roll_dice()
+        print("Invalid roll")
+        reset_game()
+        restart()
+
+# def game_logic(total, player_roll, prev_roll):
+#     """
+#     The Logic behind the game
+#     """
+#     if total in (2, 3, 12):
+#         print("player loses")
+#     elif total in (7, 11) and player_roll == 1:
+#         print("player wins")
+#     elif total in (4, 5, 6, 8, 9, 10):
+#         if player_roll == prev_roll:
+#             print("You hit your point again and Won!")
+#         else:
+#             print("You have hit your point")
+#             roll_dice()
+#     elif total == 7 and player_roll != 0:
+#         print("player loses")
+#     else:
+#         print("Invalid roll")
 
 
 # change to instructions
@@ -54,18 +110,18 @@ def introduction():
     """
     Introduction asking if you need instructions or not
     """
-    print(Fore.BLUE + "\n======================================\n")
+    print(Fore.RED + "\n======================================\n")
     print(Fore.BLUE + "█░█ █▀▀ █░░ █░░ █▀█   ▄▀█ █▄░█ █▀▄")
-    print(Fore.RED +  "█▀█ ██▄ █▄▄ █▄▄ █▄█   █▀█ █░▀█ █▄▀\n")
+    print(Fore.BLUE + "█▀█ ██▄ █▄▄ █▄▄ █▄█   █▀█ █░▀█ █▄▀\n")
     print(Fore.BLUE + "█░█░█ █▀▀ █░░ █▀▀ █▀█ █▀▄▀█ █▀▀   ▀█▀ █▀█")
-    print(Fore.RED +  "▀▄▀▄▀ ██▄ █▄▄ █▄▄ █▄█ █░▀░█ ██▄   ░█░ █▄█\n")
+    print(Fore.BLUE + "▀▄▀▄▀ ██▄ █▄▄ █▄▄ █▄█ █░▀░█ ██▄   ░█░ █▄█\n")
     print(Fore.BLUE + "▀█▀ █▀▀ █▀█ █▀▄▀█ █ █▄░█ ▄▀█ █░░   █▀▄ █ █▀▀ █▀▀")
-    print(Fore.RED +  "░█░ ██▄ █▀▄ █░▀░█ █ █░▀█ █▀█ █▄▄   █▄▀ █ █▄▄ ██▄\n")
+    print(Fore.BLUE + "░█░ ██▄ █▀▄ █░▀░█ █ █░▀█ █▀█ █▄▄   █▄▀ █ █▄▄ ██▄\n")
     print(Fore.GREEN + "Do you want to practice your skills before you hit\n")
     print(Fore.BLUE + "▀█▀ █░█ █▀▀   █▀▀ ▄▀█ █▀ █ █▄░█ █▀█")
-    print(Fore.RED +  "░█░ █▀█ ██▄   █▄▄ █▀█ ▄█ █ █░▀█ █▄█\n")
+    print(Fore.BLUE + "░█░ █▀█ ██▄   █▄▄ █▀█ ▄█ █ █░▀█ █▄█\n")
     print(Fore.GREEN + "If so you have came to the right place\n")
-    print(Fore.BLUE + "==========================================\n")
+    print(Fore.RED + "==========================================\n")
     player_name()
     response = input(Fore.CYAN + "Do you know how to play? (yes/no)\n")
     if response == "yes":
@@ -145,11 +201,18 @@ def restart():
         print(Fore.GREEN + "Get ready your Game is comming right up.....\n")
         roll_dice()
     elif response == "no":
-        print(Fore.GREEN + "\nLoading instructions....\n")
-        how_to_play()
+        print(Fore.GREEN + "\nExiting the game now!\n")
+        introduction()
     else:
         print(Fore.GREEN + "\nPlease enter yes or no\nTry again\n")
-        introduction()
+        restart()
+
+
+def reset_game():
+    global player_roll
+    global game_over
+    player_roll = 0
+    game_over = False
 
 
 def main_game():
@@ -157,7 +220,3 @@ def main_game():
 
 
 main_game()
-
-# make a welcome function that links to intructions
-# add art
-# maybe add color
