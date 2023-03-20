@@ -10,78 +10,6 @@ game_over = False
 last_roll = 0
 
 
-def print_dice(first_dice, second_dice):
-    """
-    To print the Dice art to the terminal
-    """
-    for i in range(5):
-        print(DICE_ART[first_dice][i], " ", DICE_ART[second_dice][i])
-
-
-def roll_dice():
-    """
-    To ask the player if they want to roll the dice
-    """
-    dice1 = random.randint(1, 6)
-    dice2 = random.randint(1, 6)
-    total = dice1 + dice2
-    while True:
-        response = input(Fore.CYAN + "Please use 'r' to roll your dice\n")
-        if response == "r":
-            print(Fore.YELLOW + "Dice Rolling....\n")
-            print_dice(dice1, dice2)
-            print(f"{Fore.YELLOW}you rolled a total of {total}\n")
-            game_logic(total)
-            break
-        else:
-            print(Fore.YELLOW + "You have to enter 'r' to roll your dice")
-            print(Fore.YELLOW + "Try Again!\n")
-
-
-def game_logic(total):
-    """
-    This is for the logic to make the game work.
-    If you roll a 7 or 11 on your first turn you win.
-    If you roll a 3 or 11 on your first turn you lose.
-    If you roll a 2, 4, 5, 6, 8, 9, 10 on your first go you have hit the point.
-    You need to roll the point again to win the game
-    if you dont win on your first go.
-    If you are on your second turn which is your point
-    and you roll 2, 3, 7, 11 or 12 you lose.
-    You have to win on your first turn or hit your point twice in a row to win. 
-    """
-    global last_roll
-    global player_roll
-    if total == last_roll:
-        print(Fore.GREEN + "You hit your point again and Won!\n")
-        player_roll += 1
-        reset_game()
-        restart()
-    elif total in (2, 4, 5, 6, 8, 9, 10):
-        print(Fore.CYAN + "You have hit your point\n")
-        player_roll += 1
-        last_roll = total
-        roll_dice()
-    elif total in (7, 11) and player_roll == 0:
-        print(Fore.GREEN + "player wins\n")
-        reset_game()
-        restart()    
-    elif total in (2, 3, 12):
-        print(Fore.RED + "player loses\n")
-        reset_game()
-        restart()
-    
-    elif total in (7, 11) and player_roll != 0:
-        print(Fore.RED + "player loses\n")
-        reset_game()
-        restart()
-    else:
-        print("Invalid roll\n")
-        reset_game()
-        restart()
-
-
-# change to instructions
 def introduction():
     """
     Introduction asking if you need instructions or not
@@ -168,6 +96,76 @@ def player_age():
         print(Fore.GREEN + "Please enter your age\n")
 
 
+def print_dice(first_dice, second_dice):
+    """
+    To print the Dice art to the terminal
+    """
+    for i in range(5):
+        print(DICE_ART[first_dice][i], " ", DICE_ART[second_dice][i])
+
+
+def roll_dice():
+    """
+    To ask the player if they want to roll the dice
+    """
+    dice1 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    total = dice1 + dice2
+    while True:
+        response = input(Fore.CYAN + "Please use 'r' to roll your dice\n")
+        if response == "r":
+            print(Fore.YELLOW + "Dice Rolling....\n")
+            print_dice(dice1, dice2)
+            print(f"{Fore.YELLOW}you rolled a total of {total}\n")
+            game_logic(total)
+            break
+        else:
+            print(Fore.YELLOW + "You have to enter 'r' to roll your dice")
+            print(Fore.YELLOW + "Try Again!\n")
+
+
+def game_logic(total):
+    """
+    This is for the logic to make the game work.
+    If you roll a 7 or 11 on your first turn you win.
+    If you roll a 3 or 11 on your first turn you lose.
+    If you roll a 2, 4, 5, 6, 8, 9, 10 on your first go you have hit the point.
+    You need to roll the point again to win the game
+    if you dont win on your first go.
+    If you are on your second turn which is your point
+    and you roll 2, 3, 7, 11 or 12 you lose.
+    You have to win on your first turn or hit your point twice in a row to win. 
+    """
+    global last_roll
+    global player_roll
+    if total == last_roll:
+        print(Fore.GREEN + "You hit your point again and Won!\n")
+        player_roll += 1
+        reset_game()
+        restart()
+    elif total in (2, 4, 5, 6, 8, 9, 10):
+        print(Fore.CYAN + "You have hit your point\n")
+        player_roll += 1
+        last_roll = total
+        roll_dice()
+    elif total in (7, 11) and player_roll == 0:
+        print(Fore.GREEN + "player wins\n")
+        reset_game()
+        restart()    
+    elif total in (2, 3, 12):
+        print(Fore.RED + "player loses\n")
+        reset_game()
+        restart()
+    elif total in (7, 11) and player_roll != 0:
+        print(Fore.RED + "player loses\n")
+        reset_game()
+        restart()
+    else:
+        print("Invalid roll\n")
+        reset_game()
+        restart()
+
+
 def restart():
     """
     For restarting the game
@@ -184,15 +182,17 @@ def restart():
         restart()
 
 
+def main_game():
+    introduction()
+
+
 def reset_game():
+    global last_roll
     global player_roll
     global game_over
     player_roll = 0
+    last_roll = 0
     game_over = False
-
-
-def main_game():
-    introduction()
 
 
 main_game()
