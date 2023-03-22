@@ -27,6 +27,13 @@
   * [Code Used](#code-used)
   * [Acknowledgments](#acknowledgments)  
 
+# How to play
+
+1. The player rolls the dice and adds the numbers together.
+2. If the total is 7 or 11 the player wins.
+3. If the total is 2, 3, or 12, the player loses.
+4. If the total is any other number 4, 5, 6, 8, 9, or 10 that number becomes the point.
+5. The player then continues to roll the dice until they either roll the point again and win or they roll a 7 or 11 and lose.
 
 
 
