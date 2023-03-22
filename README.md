@@ -1,6 +1,17 @@
 # Terminal Dice
 **Terminal Dice** is a game of chance that mimics the popular casino game called Craps or Casino Dice. It runs in the Code Institute mock terminal on Heroku. The game involves rolling a pair of dice, and depending on the outcome, the player either wins or loses. The player must win the game on their first attempt, or they need to roll their point twice in a row to win. The game continues until the player decides to stop playing.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/DylanP400/Terminal-dice-pp3)
+![GitHub contributors](https://img.shields.io/github/contributors/DylanP400/Terminal-dice-pp3)
+![GitHub language count](https://img.shields.io/github/languages/count/DylanP400/Terminal-dice-pp3)
+![GitHub top language](https://img.shields.io/github/languages/top/DylanP400/Terminal-dice-pp3)
+![GitHub Commit activity](https://img.shields.io/github/commit-activity/m/DylanP400/Terminal-dice-pp3?style=flat-square)
+![Code size](https://img.shields.io/github/languages/code-size/DylanP400/Terminal-Dice-pp3)
+![Github files](https://img.shields.io/github/directory-file-count/DylanP400/Terminal-Dice-pp3)
+
+![Github stars](https://img.shields.io/github/stars/DylanP400/Terminal-Dice-pp3?style=social)
+![Github forks](https://img.shields.io/github/forks/DylanP400/Terminal-Dice-pp3?style=social)
+
 [View the project live](https://terminal-dice.herokuapp.com/)
 
 # Contents
@@ -70,29 +81,17 @@
 
 * I could integrate more advanced statistics and metrics into the game, such as the average number of rolls per game or the most common point values rolled, to give players deeper insights into their gameplay and allow them to make more informed decisions.
 
+# Testing
+
+## Bugs
+* The game_logic kept printing the same dice over and over again. - I had the varible in global scope and I never passed my function a argument. 
+
+* The game Logic was not accepting a 7 as a lose condition after the first roll. - I had to restructure the elif/else statements and put them in order of importance.
+
+* The game would not deploy to Heroku - I changed the name of my run.py file at the start so I had to change it back to solve this issue.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- bugs 
-the game_logic keeps printing the same dice over and over again - I had the varible in global scope and i never passed my function a argument
-
-
-
+<!--
 https://fsymbols.com/text-art/ - for terminal dice design
 
 https://www.youtube.com/watch?v=u51Zjlnui4Y - colorama
