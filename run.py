@@ -1,9 +1,9 @@
+from dice_art import DICE_ART
 import random
+import time
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
-from dice_art import DICE_ART
-
 
 
 player_roll = 0
@@ -16,28 +16,33 @@ def introduction():
     Introduction asking if you need instructions or not
     """
     print(Fore.RED + "\n======================================")
+    time.sleep(1)
     print(Fore.BLUE + "█░█ █▀▀ █░░ █░░ █▀█   ▄▀█ █▄░█ █▀▄")
     print(Fore.BLUE + "█▀█ ██▄ █▄▄ █▄▄ █▄█   █▀█ █░▀█ █▄▀\n")
     print(Fore.BLUE + "█░█░█ █▀▀ █░░ █▀▀ █▀█ █▀▄▀█ █▀▀   ▀█▀ █▀█")
     print(Fore.BLUE + "▀▄▀▄▀ ██▄ █▄▄ █▄▄ █▄█ █░▀░█ ██▄   ░█░ █▄█\n")
     print(Fore.BLUE + "▀█▀ █▀▀ █▀█ █▀▄▀█ █ █▄░█ ▄▀█ █░░   █▀▄ █ █▀▀ █▀▀")
     print(Fore.BLUE + "░█░ ██▄ █▀▄ █░▀░█ █ █░▀█ █▀█ █▄▄   █▄▀ █ █▄▄ ██▄\n")
+    time.sleep(2)
     print(Fore.GREEN + "Do you want to practice your skills before you hit\n")
     print(Fore.BLUE + "▀█▀ █░█ █▀▀   █▀▀ ▄▀█ █▀ █ █▄░█ █▀█")
     print(Fore.BLUE + "░█░ █▀█ ██▄   █▄▄ █▀█ ▄█ █ █░▀█ █▄█\n")
-    print(Fore.GREEN + "If so you have came to the right place\n")
+    print(Fore.GREEN + "If so you have came to the right place")
     print(Fore.RED + "=========================================")
+    time.sleep(3.5)
     player_name()
-    response = input(Fore.CYAN + "Do you know how to play? (yes/no)\n")
-    if response == "yes":
-        print(Fore.GREEN + "Get ready your game is comming right up.....\n")
-        roll_dice()
-    elif response == "no":
-        print(Fore.GREEN + "\nLoading instructions....\n")
-        how_to_play()
-    else:
-        print(Fore.GREEN + "\nPlease enter 'yes' or 'no'\nTry again\n")
-        introduction()
+    while True:
+        response = input(Fore.CYAN + "Do you know how to play? (y/n)\n")
+        if response == "y":
+            print(Fore.GREEN + "Get ready your game is comming right up.....\n")
+            time.sleep(2)
+            roll_dice()
+        elif response == "n":
+            print(Fore.GREEN + "\nLoading instructions....\n")
+            time.sleep(1.5)
+            how_to_play()
+        else:
+            print(Fore.GREEN + "\nPlease enter 'y' or 'n'\nTry again\n")
 
 
 def how_to_play():
@@ -58,17 +63,18 @@ def how_to_play():
     print(Fore.YELLOW + "or they roll a 7 or 11 and lose.\n")
     while True:  # Loop to ask the same question if there is a error
         response = input(Fore.CYAN + "\nDo you want to start the game?(y/n)\n")
-        if response == "yes":
+        if response == "y":
             print(Fore.GREEN + "Best of luck your game is coming right up..\n")
+            time.sleep(2)
             roll_dice()
             break
-        elif response == "no":
+        elif response == "n":
             print(Fore.GREEN + "You just want to watch the world burn...\n")
             print(Fore.GREEN + "Restarting game\n")
             restart()
             break
         else:
-            print(Fore.RED + "\nPlease enter 'yes' or 'no'.\n")
+            print(Fore.RED + "\nPlease enter 'y' or 'n'.\n")
 
 
 def player_name():
@@ -96,7 +102,9 @@ def player_age():
         print(Fore.GREEN + "You meet the age requirements\n")
     else:
         print(Fore.RED + "I am sorry but you are not old enough to play\n")
+        time.sleep(1.5)
         print(Fore.RED + "Error...Restarting Terminal Dice\n")
+        time.sleep(1.5)
         introduction()
 
 
@@ -119,7 +127,9 @@ def roll_dice():
         response = input(Fore.CYAN + "Please use 'r' to roll your dice\n")
         if response == "r":
             print(Fore.YELLOW + "Dice Rolling....\n")
+            time.sleep(1.5)
             print_dice(dice1, dice2)
+            time.sleep(.5)
             print(f"{Fore.YELLOW}you rolled a total of {total}\n")
             game_logic(total)
             break
@@ -145,6 +155,7 @@ def game_logic(total):
     if total == last_roll:
         print(Fore.GREEN + "You hit your point again and Won!\n")
         player_roll += 1
+        time.sleep(2)
         reset_game()
         restart()
     elif total in (4, 5, 6, 8, 9, 10):
@@ -154,18 +165,22 @@ def game_logic(total):
         roll_dice()
     elif total in (7, 11) and player_roll == 0:
         print(Fore.GREEN + "player wins\n")
+        time.sleep(1.5)
         reset_game()
         restart()    
     elif total in (2, 3, 12):
         print(Fore.RED + "player loses\n")
+        time.sleep(1.5)
         reset_game()
         restart()
     elif total in (7, 11) and player_roll != 0:
         print(Fore.RED + "player loses\n")
+        time.sleep(1.5)
         reset_game()
         restart()
     else:
         print("Invalid roll\n")
+        time.sleep(1)
         reset_game()
         restart()
 
@@ -174,12 +189,15 @@ def restart():
     """
     For restarting the game
     """
-    response = input(Fore.CYAN + "Do you want to play again? 'yes' or 'no'\n")
-    if response == "yes":
-        print(Fore.GREEN + "Get ready your Game is comming right up.....\n")
+    response = input(Fore.CYAN + "Do you want to play again? (y/n)\n")
+    if response == "y":
+        print(Fore.GREEN + "Get ready your Game is coming right up.....\n")
+        time.sleep(1.5)
         roll_dice()
-    elif response == "no":
-        print(Fore.GREEN + "\nExiting the game now!\n")
+    elif response == "n":
+        print(Fore.RED + "\nExiting the game now!\n")
+        print(Fore.BLUE + "Thank you for playing!!!")
+        time.sleep(5)
         introduction()
     else:
         print(Fore.GREEN + "\nPlease enter yes or no\nTry again\n")
@@ -200,3 +218,7 @@ def reset_game():
 
 
 main_game()
+
+
+
+# COMMENT EVERY SINGLE THING THEN DELETE ME :)
