@@ -18,23 +18,22 @@
 * [User Experience](#user-experience)
   * [Initial Discussion](#initial-discussion)
   * [User Stories](#user-stories)
-* [How to play](#how-to-play)
-* [Features](#features)
 
+* [How to play](#how-to-play)
+
+* [Features](#features)
   * [Existing Features](#existing-features)
   * [Future Features](#future-features)
 
 * [Data Model](#data-model)
+
 * [Testing](#testing)
-  * [Bugs](#bugs) 
-
-
+  * [Bugs](#bugs)
 
 * [Deployment](#deployment)
   * [Local deplyoment](#local-deployment)
 
 * [Credits](#credits)
-
   * [Code Used](#code-used)
   * [Acknowledgments](#acknowledgments)  
 
@@ -89,6 +88,15 @@
 * The game Logic was not accepting a 7 as a lose condition after the first roll. - I had to restructure the elif/else statements and put them in order of importance.
 
 * The game would not deploy to Heroku - I changed the name of my run.py file at the start so I had to change it back to solve this issue.
+
+# Deployment
+This project was deployed using Code Institutes mock terminal for Heroku
+* Steps for deployment
+  * Fork or clone this repository
+  * Create a new Heroku app
+  * Set the build packs to `Python and Nodejs` in that order
+  * Link the Heroku app to the repository
+  * Click on **Deploy** 
 
 
 <!--
