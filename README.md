@@ -89,6 +89,8 @@
 
 * The game would not deploy to Heroku - I changed the name of my run.py file at the start so I had to change it back to solve this issue.
 
+* When I entered a value that wasnt a number I got a traceback error - I used a try/except to repeat the function if the input is not a number
+
 # Deployment
 This project was deployed using Code Institutes mock terminal for Heroku
 * Steps for deployment
