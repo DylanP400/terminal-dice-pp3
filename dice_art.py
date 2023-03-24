@@ -1,5 +1,7 @@
 """
 Dice art for the game
+I learned how to make the dice with this video
+https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s
 """
 DICE_ART = {
     1: (
