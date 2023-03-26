@@ -113,9 +113,14 @@ This project was deployed using Code Institutes mock terminal for Heroku.
 * Link the Heroku app to the repository.
 * Click on **Deploy**.
 
-<!--
+# Credits
 
-https://www.youtube.com/watch?v=u51Zjlnui4Y - colorama
-https://amiresponsive.co.uk/
+## Code Used
+ * For printing out the Dice to the terminal I used this video from [Bro Code](https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s)
+ * I used [fsymbols](https://fsymbols.com/text-art/) for the ACSSI art in the introduction.
 
-https://fsymbols.com/text-art/ - ACSSI art -->
+## Acknowledgments
+ * I would like to thank my mentor [Rory](https://github.com/Ri-Dearg) for all the help and guidance through out the Project.
+ * I would like to thank the Tutor support system for helping me when I was stuck or unsure.
+ * Code Instittute for the deployment terminal.
+ * [Tech with Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y) for making a guide on using Colorama.
