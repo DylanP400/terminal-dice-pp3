@@ -26,7 +26,10 @@
   * [Future Features](#future-features)
 
 * [Testing](#testing)
+  * [Validation](#validation)
+  * [Manual Testing](#manual-testing)
   * [Bugs](#bugs)
+  * [Remaning bugs](#remaining-bugs)
 
 * [Deployment](#deployment)
 
@@ -101,6 +104,26 @@ I wanted to add some colour but with this project being in the terminal I though
 
 ## Testing
 
+## Validation
+
+I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testing no errors were found.
+
+* run.py
+ ![Run.py](./images/testing1.png)
+* Dice_art.py
+ ![Dice_art.py](./images/testing2.png)
+
+## Manual Testing
+
+|Feature  |Expected Outcome| Testing Performed| Result| Pass/Fail|
+| :--- | :---| :---| :---| :---|
+| What is your name? | Logs name | Empty space, letters & numbers | It logs any input its given. | Pass |
+| What is your age? | Accepts age or exits game if under 21 | Empty space, letters & numbers | It logs any age over 21, ends game for under 21 & gives a error invalid input. please enter a valid age | Pass
+| Do you know how to play? | Takes you to the game or the instructions. | Empty space, letters & numbers | It only accpets 'y' or 'n' as an answer otherwise it prints "Please enter 'y' or 'n' try again" & repeats the question | Pass
+| Do you want to start the game? | Starts the game or exits the game. | Empty space , letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n'" & repeats the question | Pass
+| Please use 'r' to roll your dice | Prints the dice at random & adds the score together. | Empty space, letters & numbers | Any input that is not 'r' prints a error "You have to enter 'r' to roll your dice try again" & repeats the question. | Pass
+| Do you want to play again? 'y' or 'n' | Brings you back to roll the dice again or exits the game | Empty space, letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n' try again" & repeats the question | Pass
+
 ## Bugs
 
 * The game logic kept printing the same dice over and over again. - I had the varible in global scope and I never passed my function a argument.
@@ -110,6 +133,10 @@ I wanted to add some colour but with this project being in the terminal I though
 * The game would not deploy to Heroku - I changed the name of my run.py file at the start so I had to change it back to solve this issue.
 
 * When I entered a value that wasnt a number I got a traceback error - I used a try/except to repeat the code if the input is not a number.
+
+## Remaining bugs
+
+* No bugs remain
 
 ## Deployment
 
