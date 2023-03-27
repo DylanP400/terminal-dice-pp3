@@ -29,8 +29,9 @@ last_roll = 0
 
 def introduction():
     """
-    Introduction welcoming you to the game which leads to
-    the intructions or starts the game
+    Introduction welcoming you to the game and asks
+    do you know how to play which leads to the
+    intructions or starts the game.
     """
     print(Fore.RED + "\n======================================")
     time.sleep(1)
@@ -41,10 +42,10 @@ def introduction():
     print(Fore.BLUE + "▀█▀ █▀▀ █▀█ █▀▄▀█ █ █▄░█ ▄▀█ █░░   █▀▄ █ █▀▀ █▀▀")
     print(Fore.BLUE + "░█░ ██▄ █▀▄ █░▀░█ █ █░▀█ █▀█ █▄▄   █▄▀ █ █▄▄ ██▄\n")
     time.sleep(2)
-    print(Fore.GREEN + "Do you want to practice your skills before you hit\n")
+    print(Fore.BLUE + "Do you want to practice your skills before you hit\n")
     print(Fore.BLUE + "▀█▀ █░█ █▀▀   █▀▀ ▄▀█ █▀ █ █▄░█ █▀█")
     print(Fore.BLUE + "░█░ █▀█ ██▄   █▄▄ █▀█ ▄█ █ █░▀█ █▄█\n")
-    print(Fore.GREEN + "If so you have came to the right place")
+    print(Fore.BLUE + "If so you have came to the right place")
     print(Fore.RED + "=========================================")
     time.sleep(3.5)
     player_name()
@@ -99,7 +100,7 @@ def how_to_play():
 
 def player_name():
     """
-    For setting the players name.
+    Asks the player for their name and logs the name
     """
     print(Fore.BLUE + "------------------")
     name = input(Fore.CYAN + "What is your name?\n")
@@ -111,6 +112,8 @@ def player_name():
 def player_age():
     """
     To check if the player is old enough to play
+    if te player is over 21 the game starts if 
+    the player is not over 21 the game restarts
     """
     try:
         age = int(input(Fore.CYAN + "What age are you?\n\n"))
@@ -141,7 +144,7 @@ def print_dice(first_dice, second_dice):
 def roll_dice():
     """
     To ask the player if they want to roll the dice and adds
-    the total once the dice have been rolled.
+    the total once the dice have been printed.
     """
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
@@ -176,7 +179,7 @@ def game_logic(total):
     This function has 2 of the global varibles seen at the top.
     It checks if a user hit their point on their second roll if not
     then it check if the player is on the first roll and has won or not.
-    It Implements the player roll by one everytime you win or hit your point.
+    It implements the player roll by one everytime you win or hit your point.
     If you lose it resets and restarts the game
     """
     global last_roll
@@ -216,9 +219,9 @@ def game_logic(total):
 
 def restart():
     """
-    For restarting the game and exiting.
+    For restarting the game and exiting the game.
     """
-    response = input(Fore.CYAN + "Do you want to play again? (y/n)\n")
+    response = input(Fore.CYAN + "Do you want to play again? 'y' or 'n')\n")
     if response == "y":
         print(Fore.GREEN + "Get ready your Game is coming right up.....\n")
         time.sleep(1.5)
@@ -234,7 +237,7 @@ def restart():
         time.sleep(5)
         introduction()
     else:
-        print(Fore.GREEN + "\nPlease enter yes or no\nTry again\n")
+        print(Fore.GREEN + "\nPlease enter 'y' or 'n'\nTry again\n")
         restart()
 
 
