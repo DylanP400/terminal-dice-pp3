@@ -37,21 +37,21 @@
   * [Code Used](#code-used)
   * [Acknowledgments](#acknowledgments)  
 
-## How to play
+# How to play
 
 1. The player rolls the dice and the computer adds the numbers together.
 2. If the total is 7 or 11 the player wins.
 3. If the total is 2, 3, or 12, the player loses.
 4. If the total is any other number 4, 5, 6, 8, 9, or 10 that number becomes the point.
-5. The player then continues to roll the dice until they either roll the point again and win or they roll a 7 or 11 and lose.
+5. The player then continues to roll the dice until they either roll the point again and win or they roll a 2, 3, 7, 11 or 12 and lose.
 
-## Features
+# Features
 
 ## Colour Scheme
 
 I wanted to add some colour but with this project being in the terminal I thought I couldnt or would be limited and then I discovered [Colorama](https://pypi.org/project/colorama/).
 
-* Red - Is used red for the border of the welcome message and the border of the exit message. I also used Red in all error messages and anything that is considered negative.
+* Red - Is used for the border of the welcome message and the border of the exit message. I also used Red in all error messages and anything that is considered negative.
 * Green - Is used for anything considered postive and for game commands as in loading game, meeting age requirments etc.
 * Blue - Is used for the welcome message and the end game message.
 * Yellow - Is used for anything to do with the Dice. Dice rolling, telling you your score and the intructions.
@@ -72,8 +72,8 @@ I wanted to add some colour but with this project being in the terminal I though
 * ![Do you know how to play](./images/correct-age-4.png)
 
 * If you clicked no it will take you to the instructions then it will ask you if you want to play.
-  * ![Intructions](./images/instructions-1-5.png)
-  * ![Intructions](./images/instructions-2-6.png)
+* ![Intructions](./images/instructions-1-5.png)
+* ![Intructions](./images/instructions-2-6.png)
 
 * After starting the game it will ask you to press 'r' to roll your dice.
 * ![Star the game](./images/startgame-after-intructions-7.png)
@@ -102,7 +102,7 @@ I wanted to add some colour but with this project being in the terminal I though
 
 * Along with the betting system I would like to implement a cash out system if the player is feeling unlucky.
 
-## Testing
+# Testing
 
 ## Validation
 
@@ -124,7 +124,7 @@ I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testi
 | Please use 'r' to roll your dice | Prints the dice at random & adds the score together. | Empty space, letters & numbers | Any input that is not 'r' prints a error "You have to enter 'r' to roll your dice try again" & repeats the question. | Pass
 | Do you want to play again? 'y' or 'n' | Brings you back to roll the dice again or exits the game | Empty space, letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n' try again" & repeats the question | Pass
 
-## Bugs
+# Bugs
 
 * The game logic kept printing the same dice over and over again. - I had the varible in global scope and I never passed my function a argument.
 
@@ -138,7 +138,7 @@ I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testi
 
 * No bugs remain
 
-## Deployment
+# Deployment
 
 This project was deployed using Code Institutes mock terminal for Heroku.
 
@@ -149,11 +149,11 @@ This project was deployed using Code Institutes mock terminal for Heroku.
 * Link the Heroku app to the repository.
 * Click on **Deploy**.
 
-## Credits
+# Credits
 
 ## Code Used
 
-* For printing out the Dice to the terminal I used one line of code from [Bro Code's video](https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s)
+* For printing out the Dice to the terminal I used a line of code from [Bro Code's video](https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s) I also used the design for dice in the Dice_art.py
 * I used [fsymbols](https://fsymbols.com/text-art/) for the ACSSI art in the introduction.
 
 ## Acknowledgments
