@@ -18,13 +18,13 @@ colorama.init(autoreset=True)
 
 # Global varibles
 # Tracks the player roll
-player_roll = 0
+PLAYER_ROLL = 0
 
 # Shows the game is not over can be changed to True to end the game.
-game_over = False
+GAME_OVER = False
 
 # Tracks the last roll
-last_roll = 0
+LAST_ROLL = 0
 
 
 def introduction():
@@ -112,7 +112,7 @@ def player_name():
 def player_age():
     """
     To check if the player is old enough to play
-    if te player is over 21 the game starts if 
+    if the player is over 21 the game starts if
     the player is not over 21 the game restarts
     """
     try:
@@ -182,20 +182,20 @@ def game_logic(total):
     It implements the player roll by one everytime you win or hit your point.
     If you lose it resets and restarts the game
     """
-    global last_roll
-    global player_roll
-    if total == last_roll:
+    global LAST_ROLL
+    global PLAYER_ROLL
+    if total == LAST_ROLL:
         print(Fore.GREEN + "You hit your point again and Won!\n")
-        player_roll += 1
+        PLAYER_ROLL += 1
         time.sleep(2)
         reset_game()
         restart()
     elif total in (4, 5, 6, 8, 9, 10):
         print(Fore.CYAN + "You have hit your point\n")
-        player_roll += 1
-        last_roll = total
+        PLAYER_ROLL += 1
+        LAST_ROLL = total
         roll_dice()
-    elif total in (7, 11) and player_roll == 0:
+    elif total in (7, 11) and PLAYER_ROLL == 0:
         print(Fore.GREEN + "player wins\n")
         time.sleep(1.5)
         reset_game()
@@ -205,7 +205,7 @@ def game_logic(total):
         time.sleep(1.5)
         reset_game()
         restart()
-    elif total in (7, 11) and player_roll != 0:
+    elif total in (7, 11) and PLAYER_ROLL != 0:
         print(Fore.RED + "player loses\n")
         time.sleep(1.5)
         reset_game()
@@ -253,12 +253,12 @@ def reset_game():
     """
     Resets the game and the global varibles.
     """
-    global last_roll
-    global player_roll
-    global game_over
-    player_roll = 0
-    last_roll = 0
-    game_over = False
+    global LAST_ROLL
+    global PLAYER_ROLL
+    global GAME_OVER
+    PLAYER_ROLL = 0
+    LAST_ROLL = 0
+    GAME_OVER = False
 
 
 main_game()
