@@ -20,6 +20,8 @@
 
 * [How to play](#how-to-play)
 
+* [FlowChart](#flow-chart)
+
 * [Features](#features)
   * [Colour Scheme](#colour-scheme)
   * [Existing Features](#exisiting-features)
@@ -46,6 +48,11 @@
 4. If the total is any other number 4, 5, 6, 8, 9, or 10 that number becomes the point.
 5. The player then continues to roll the dice until they either roll the point again and win or they roll a 2, 3, 7, 11 or 12 and lose.
 
+# FlowChart
+
+* I used [Lucid Chart](https://www.lucidchart.com/) to make the flowchart.
+
+* ![FlowChart](./images/flowchart.png)
 # Features
 
 ## Colour Scheme
