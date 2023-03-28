@@ -32,6 +32,7 @@
   * [Remaning bugs](#remaining-bugs)
 
 * [Deployment](#deployment)
+  * [Local deplyoment](#local-deployment)
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -109,9 +110,9 @@ I wanted to add some colour but with this project being in the terminal I though
 I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testing no errors were found.
 
 * run.py
- ![Run.py](./images/testing1.png)
+  * ![Run.py](./images/testing1.png)
 * Dice_art.py
- ![Dice_art.py](./images/testing2.png)
+  * ![dice_art.py](./images/testing2.png)
 
 ## Manual Testing
 
@@ -125,20 +126,20 @@ I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testi
 | Do you want to play again? 'y' or 'n' | Brings you back to roll the dice again or exits the game | Empty space, letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n' try again" & repeats the question | Pass
 
 # Bugs
-
-* The game logic kept printing the same dice over and over again. - I had the varible in global scope and I never passed my function a argument.
-
-* The game logic was not accepting a 7 as a lose condition after the first roll. - I had to restructure the elif/else statements and put them in order of importance.
-
-* The game would not deploy to Heroku - I changed the name of my run.py file at the start so I had to change it back to solve this issue.
-
-* When I entered a value that wasnt a number I got a traceback error - I used a try/except to repeat the code if the input is not a number.
+| Bug | Solution |
+| :--- | :---| 
+| The game logic kept printing the same dice over and over again| I had the varible in global scope and I never passed my function a argument. |
+|The game logic was not accepting a 7 as a lose condition after the first roll | I had to restructure the elif/else statements and put them in order of importance. |
+| The game would not deploy to Heroku | I changed the name of my run.py file at the start so I had to change it back to solve this issue. |
+| When I entered a value that wasnt a number I got a traceback error | I used a try/except to repeat the code if the input is not a number. |
 
 ## Remaining bugs
 
-* No bugs remain
+* No bugs remain.
 
 # Deployment
+
+## Heroku
 
 This project was deployed using Code Institutes mock terminal for Heroku.
 
@@ -148,6 +149,26 @@ This project was deployed using Code Institutes mock terminal for Heroku.
 * Set the build packs to `Python and Nodejs` in that order.
 * Link the Heroku app to the repository.
 * Click on **Deploy**.
+
+## Local Deployment
+
+### How to Fork
+
+To fork the repository:
+
+1. Log in to Github.
+2. Go to the repository for this project, [DylanP400/terminal-dice-pp3](https://github.com/DylanP400/terminal-dice-pp3)
+3. Click the Fork button in the top right corner.
+
+### How to clone 
+To clone the repository:
+
+1. Log in to GitHub.
+2. Go to the repository for this project, [DylanP400/terminal-dice-pp3](https://github.com/DylanP400/terminal-dice-pp3)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
 
 # Credits
 
