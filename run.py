@@ -11,7 +11,7 @@ import random
 # Slows down the Terminal output
 import time
 
-# To Import the colorama module
+# To import the Colorama module
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -185,7 +185,7 @@ def game_logic(total):
     global LAST_ROLL
     global PLAYER_ROLL
     if total == LAST_ROLL:
-        print(Fore.GREEN + "You hit your point again and Won!\n")
+        print(Fore.GREEN + "You hit your point again and won!\n")
         PLAYER_ROLL += 1
         time.sleep(2)
         reset_game()
@@ -223,14 +223,14 @@ def restart():
     """
     response = input(Fore.CYAN + "Do you want to play again? 'y' or 'n')\n")
     if response == "y":
-        print(Fore.GREEN + "Get ready your Game is coming right up.....\n")
+        print(Fore.GREEN + "Get ready your game is coming right up.....\n")
         time.sleep(1.5)
         roll_dice()
     elif response == "n":
         time.sleep(2)
         print(Fore.RED + "-----------------------")
-        print(Fore.RED + "Exiting the game now!")
-        print(Fore.RED + "------------------------")
+        print(Fore.RED + "Exiting the game!")
+        print(Fore.RED + "-----------------------")
         print(Fore.GREEN + "========================")
         print(Fore.BLUE + "Thank you for playing!!!")
         print(Fore.GREEN + "========================")

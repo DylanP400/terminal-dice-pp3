@@ -20,7 +20,7 @@
 
 * [How to play](#how-to-play)
 
-* [FlowChart](#flow-chart)
+* [FlowChart](#flowchart)
 
 * [Features](#features)
   * [Colour Scheme](#colour-scheme)
@@ -53,11 +53,14 @@
 * I used [Lucid Chart](https://www.lucidchart.com/) to make the flowchart.
 
 * ![FlowChart](./images/flowchart.png)
+
 # Features
 
 ## Colour Scheme
 
-I wanted to add some colour but with this project being in the terminal I thought I couldnt or would be limited and then I discovered [Colorama](https://pypi.org/project/colorama/).
+I wanted to add some colour but with this project being in the terminal I thought I couldnt or I would be limited and then I discovered [Colorama](https://pypi.org/project/colorama/).
+
+I watched [this video]((https://www.youtube.com/watch?v=u51Zjlnui4Y)) to see how to add Colorama to the project.
 
 * Red - Is used for the border of the welcome message and the border of the exit message. I also used Red in all error messages and anything that is considered negative.
 * Green - Is used for anything considered postive and for game commands as in loading game, meeting age requirments etc.
@@ -79,11 +82,11 @@ I wanted to add some colour but with this project being in the terminal I though
 * After giving your age if you are old enough to play you will be asked if you know how to play.
 * ![Do you know how to play](./images/correct-age-4.png)
 
-* If you clicked no it will take you to the instructions then it will ask you if you want to play.
+* If you clicked 'n' it will take you to the instructions then it will ask you if you want to play.
 * ![Intructions](./images/instructions-1-5.png)
 * ![Intructions](./images/instructions-2-6.png)
 
-* After starting the game it will ask you to press 'r' to roll your dice.
+* After starting the game it will ask you to enter 'r' to roll your dice.
 * ![Star the game](./images/startgame-after-intructions-7.png)
 
 * When you enter 'r' the dice will print to the terminal and add the two dice together to give you your total.
@@ -102,7 +105,7 @@ I wanted to add some colour but with this project being in the terminal I though
 
 * It would be great to provide users with the ability to create their own accounts and save their names and scores. This feature can personalize the gaming experience, as players can keep track of their progress and compete against other players' high scores. Additionally, having a user account system can encourage players to return to the game and improve their scores over time.
 
-* Game Variations By adding different variations of craps, such as Simplified Craps or High Point Craps, players can experience different rule sets and strategies, which can keep the game fresh and engaging over multiple play sessions.
+* Game variations by adding different variations of craps, such as Simplified Craps or High Point Craps, players can experience different rule sets and strategies, which can keep the game fresh and engaging over multiple play sessions.
 
 * I think it would be a good idea to include a betting system in the game, so players can decide how much money to bet on each roll. This will add more excitement to the game and make it more replayable, as players can try different betting strategies to see which one works best.
 
@@ -118,7 +121,7 @@ I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testi
 
 * run.py
   * ![Run.py](./images/testing1.png)
-* Dice_art.py
+* dice_art.py
   * ![dice_art.py](./images/testing2.png)
 
 ## Manual Testing
@@ -126,17 +129,18 @@ I used the [Code Institute Pep8 Linter](https://pep8ci.herokuapp.com/) for testi
 |Feature  |Expected Outcome| Testing Performed| Result| Pass/Fail|
 | :--- | :---| :---| :---| :---|
 | What is your name? | Logs name | Empty space, letters & numbers | It logs any input its given. | Pass |
-| What is your age? | Accepts age or exits game if under 21 | Empty space, letters & numbers | It logs any age over 21, ends game for under 21 & gives a error invalid input. please enter a valid age | Pass
+| What is your age? | Accepts age or exits game if under 21 | Empty space, letters & numbers | It logs any age over 21, ends game for under 21 & gives a error invalid input. Please enter a valid age | Pass
 | Do you know how to play? | Takes you to the game or the instructions. | Empty space, letters & numbers | It only accpets 'y' or 'n' as an answer otherwise it prints "Please enter 'y' or 'n' try again" & repeats the question | Pass
 | Do you want to start the game? | Starts the game or exits the game. | Empty space , letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n'" & repeats the question | Pass
 | Please use 'r' to roll your dice | Prints the dice at random & adds the score together. | Empty space, letters & numbers | Any input that is not 'r' prints a error "You have to enter 'r' to roll your dice try again" & repeats the question. | Pass
 | Do you want to play again? 'y' or 'n' | Brings you back to roll the dice again or exits the game | Empty space, letters & numbers | Any input that is not 'Y' or 'n' prints a error "Please enter 'y' or 'n' try again" & repeats the question | Pass
 
 # Bugs
+
 | Bug | Solution |
-| :--- | :---| 
+| :--- | :---|
 | The game logic kept printing the same dice over and over again| I had the varible in global scope and I never passed my function a argument. |
-|The game logic was not accepting a 7 as a lose condition after the first roll | I had to restructure the elif/else statements and put them in order of importance. |
+| The game logic was not accepting a 7 as a lose condition after the first roll | I had to restructure the elif/else statements and put them in order of importance. |
 | The game would not deploy to Heroku | I changed the name of my run.py file at the start so I had to change it back to solve this issue. |
 | When I entered a value that wasnt a number I got a traceback error | I used a try/except to repeat the code if the input is not a number. |
 
@@ -167,7 +171,8 @@ To fork the repository:
 2. Go to the repository for this project, [DylanP400/terminal-dice-pp3](https://github.com/DylanP400/terminal-dice-pp3)
 3. Click the Fork button in the top right corner.
 
-### How to clone 
+### How to clone
+
 To clone the repository:
 
 1. Log in to GitHub.
@@ -176,12 +181,12 @@ To clone the repository:
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
-
 # Credits
 
 ## Code Used
 
-* For printing out the Dice to the terminal I used a line of code from [Bro Code's video](https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s) I also used the design for dice in the Dice_art.py
+* For printing out the dice to the terminal I used a line of code from [Bro Code's video](https://www.youtube.com/watch?v=x-Ag2_bJ40Y&t=308s) I also used the design for
+ the dice in the dice_art.py
 * I used [fsymbols](https://fsymbols.com/text-art/) for the ACSSI art in the introduction.
 
 ## Acknowledgments
